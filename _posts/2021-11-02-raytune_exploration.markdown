@@ -5,6 +5,8 @@ categories: jekyll update
 ---
 I tried out Raytune. It was satisfying, but I was shocked by how ineffective it was at improving my results.
 
+$x^2 + 2x + 1 = 0$
+
 {% highlight ruby %}
 from lenet import * 
 from dataloaders import *
