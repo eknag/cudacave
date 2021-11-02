@@ -15,5 +15,10 @@ I'm hosting everything using NGINX.
 
 ## Important Commands
 `edit_cudacave` and `deploy_cudacave` are scripts located in \bin that should be used to make changes to the website.
+
+## Tips
+Currently, I'm editing markdown files in VS code using the Grammarly extension. [Thank you](https://medium.com/@znck/grammarly-in-code-b62dd1a4c76e)
+
+$X^2 + 2x + a = 0$
 ---
 
