@@ -1,7 +1,7 @@
 # README
 ---
 ## Summary
-This is just a simple blog that might contain various ramblings from time to time. This is primarly a learning too that I'm using to better understand webhosting.
+This is just a simple blog that might contain various ramblings from time to time. This is primarly a learning tool that I'm using to better understand webhosting.
 
 ## Infrastructure
 This is a simple Jekyll site that I have set up on my personal server. It is tied to cudacave.com, which is set up via dynamic DNS and Google Domains.
