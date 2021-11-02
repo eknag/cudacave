@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd $HOME/jekyll/cudacave.com/
+JEKYLL_ENV=production bundle exec jekyll build
+rsync -avr --delete-after --delete-excluded $HOME/jekyll/cudacave.com/_site/ /var/www/cudacave.com/_site

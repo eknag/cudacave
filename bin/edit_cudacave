@@ -1,0 +1,17 @@
+#!/bin/bash
+#If no arguments are provided, edit opens the directory of the blog
+#If an argument is provided, it opens a new markdown file in the _posts directory of the blog
+
+blogDirectory="$HOME/jekyll/cudacave.com"
+starterPost="$HOME/jekyll/cudacave.com/starter_files/starter_post.md"
+
+openDoc() {
+  fname=$1
+  printf -v date '%(%Y-%m-%d)T' -1
+  cd "${blogDirectory}/_posts/"
+  full_file_name="${date}-${fname}.md"
+  cp $starterPost $full_file_name
+  vim $full_file_name
+}
+
+openDoc $1
