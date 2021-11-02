@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Self Hosting Jekyll Site with NginX on Ubuntu 20.04"
+title:  "Self Hosting Jekyll Site with Nginx on Ubuntu 20.04"
 categories: jekyll update
 ---
-This website was set up using Jekyll, NginX, and is hosted from home on a Ubuntu 20.04 server. 
+This website was set up using Jekyll, Nginx, and is hosted from home on a Ubuntu 20.04 server. 
 {% highlight ruby %}
 def print_hi(name)
   puts "Hi, #{name}"

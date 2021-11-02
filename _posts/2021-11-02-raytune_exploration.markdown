@@ -3,7 +3,7 @@ layout: post
 title:  "Exploring RayTune for the first time"
 categories: jekyll update
 ---
-I tried out Raytune. It was satisfying but I was shocked by how innefective it was at improving my results.
+I tried out Raytune. It was satisfying, but I was shocked by how ineffective it was at improving my results.
 
 {% highlight ruby %}
 from lenet import * 
