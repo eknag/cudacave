@@ -3,7 +3,7 @@ layout: post
 title:  "Exploring Ray Tune for Pytorch Hyperparameter Optimization"
 categories: jekyll update
 ---
-I tried out Ray Tune based on the tutorial found on the [PyTorch.org tutorials](https://pytorch.org/tutorials/beginner/hyperparameter_tuning_tutorial.html). Set up was not straightforward, as I ran into some issues, but I resolved them quickly enough. I will detail my final implementation and then explain some of the initial setup issues.
+I tried out Ray Tune based on the tutorial found on the [PyTorch.org tutorials](https://pytorch.org/tutorials/beginner/hyperparameter_tuning_tutorial.html). Setting up was not straightforward, as I ran into some issues, but I quickly resolved them I will detail my final implementation and then explain some of the initial setup issues.
 
 ## Problems encountered during setup
 From what I can remember, I encountered two primary issues.
