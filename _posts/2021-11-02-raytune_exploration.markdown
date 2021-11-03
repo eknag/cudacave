@@ -255,3 +255,4 @@ Here is an example of a learning rate test that was run.
 
 So far, the most annoying limitation is that Ray Tune seems to run identical instances of tests. while trying to run experiements on the type of pooling in the LeNet, when I ran 3 experiments, it would often run two instances of 'max', one instance of 'avg' and zero instances of 'no'. I need to figure out how to ensure each trail is unique. This isn't a problem when testing from non-discreet distributions.
 
+![Duplicate Tests Spawning from tune.choice](/assets/images/duplicate_trials.png)
