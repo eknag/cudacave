@@ -5,3 +5,6 @@
 3. Explore Themes
 4. Complete about page, etc so that default jekyll text is not remaining
 5. Consider a nav bar
+6. Write article on setup
+7. Write article on Eth mining and Overclock
+8. Write article on server setup
