@@ -6,8 +6,8 @@ categories: jekyll update
 I tried out Ray Tune based on the tutorial found on the [PyTorch.org tutorials](https://pytorch.org/tutorials/beginner/hyperparameter_tuning_tutorial.html). Setting up was not straightforward, as I ran into some issues, but I quickly resolved them I will detail my final implementation and then explain some of the initial setup issues.
 
 ## Problems encountered during setup
-From what I can remember, I encountered two primary issues.
-1. Radis errors of unkown origin.
+While setting up Ray Tune, I encountered a few issues along the way.
+1. Radis errors of unknown origin.
 2. Numpy errors when calling tune.report
 3. Idle Processes lying around
 
@@ -116,7 +116,7 @@ def main():
     print("done")
 {% endhighlight %}
 
-To keep everything orginized, I set up a file `tests.py` that holds each experiment. I wish python were explicitly typed, so I could typedef the experiment datastructure. An experiement is a tuple of (net_parameters, experiment_parameters), where each parameter set is a dictionar of values. This keeps everything nice and orginized and unsures I have a catalouge of tests to choose from. Here is an example:
+To keep everything organized, I set up a file, `tests.py`, that holds each experiment. I wish python were explicitly typed, so I could typedef the experiment data structure. An experiement is a tuple of (net_parameters, experiment_parameters), where each parameter set is a dictionar of values. This keeps everything nice and orginized and unsures I have a catalouge of tests to choose from. Here is an example:
 
 {% highlight python %}
 lr_small_test = ({'model': 'lenet',
@@ -253,6 +253,6 @@ Here is an example of a learning rate test that was run.
 
 # Limitations
 
-So far, the most annoying limitation is that Ray Tune seems to run identical instances of tests. while trying to run experiements on the type of pooling in the LeNet, when I ran 3 experiments, it would often run two instances of 'max', one instance of 'avg' and zero instances of 'no'. I need to figure out how to ensure each trail is unique. This isn't a problem when testing from non-discreet distributions.
+So far, the most annoying limitation is that Ray Tune seems to run identical instances of tests. While trying to run experiments on the type of pooling in the LeNet, when I ran 3 experiments, it would often run two instances of 'max', one instance of 'avg' and zero instances of 'no'. I need to figure out how to ensure each trail is unique. This isn't a problem when testing from non-discreet distributions.
 
 ![Duplicate Tests Spawning from tune.choice](/assets/images/duplicate_trials.png)
