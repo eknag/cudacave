@@ -62,7 +62,7 @@ redis.exceptions.ConnectionError: Error 32 while writing to socket. Broken pipe.
 
 Since I have absolutely zero experience with radis, and honestly I'm not sure what a socket or a pipe are, I was a little bewildered. I felt like I had followed the tutorial exactly, but it just didn't work at all. Thankfully, I quickly ran into [This Glorious Thread](https://github.com/ray-project/ray/issues/12157) which pointed to the [User Guide on Handling Large Datasets](https://docs.ray.io/en/latest/tune/user-guide.html#handling-large-datasets). It seemed odd, since CIFAR10 is hardly a large dataset. However, it worked flawlessly. I'm still a bit confused why. All I had to do was change
 
-{% highlight python3 %}
+{% highlight python %}
 results = tune.run(
     partial(train_func, data=data, saveFilePath='./models/'+experiment_name, checkpoint_dir='./checkpints'),
     resources_per_trial={"cpu": cpus_per_trial, "gpu": gpus_per_trial},
@@ -76,7 +76,7 @@ results = tune.run(
 
 to
 
-{% highlight python3 %}
+{% highlight python %}
 results = tune.run(
     tune.with_parameters(train_func, data=data, saveFilePath='./models/'+experiment_name, checkpoint_dir='./checkpints'),
     resources_per_trial={"cpu": cpus_per_trial, "gpu": gpus_per_trial},
@@ -211,7 +211,7 @@ def run_experiment(net_params, experiment_params, train_func):
 
 `train.py` contains the helper function that initializes each `LeNet` instance and calls the `.fit` method.
 
-{% highlight python3 %}
+{% highlight python %}
 from lenet import * 
 from dataloaders import *
 
@@ -230,7 +230,7 @@ def train_cifar(params, data=None, saveFilePath=None, checkpoint_dir=None):
 
 Lastly, we need to communicate the performance of the model from the training loop. Adding this quick snippet to my `LeNet` class fit method worked perfectly. It spends a lot of time saving the model and calculating metrics, so I set it to run only once every 4 epochs.
 
-{% highlight python3 %}
+{% highlight python %}
 #raytune stuff for hyperparam optimization
 if (epoch % 4 == 0 and params['ray_tune']):
     with tune.checkpoint_dir(epoch) as checkpoint_dir:
