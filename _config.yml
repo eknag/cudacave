@@ -21,7 +21,7 @@
 title: cudacave
 email: everettknag@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  You've got a GPU in your cave. What are you going to do with it?
+  A blog about various projects that make use of my GPU.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  eknag

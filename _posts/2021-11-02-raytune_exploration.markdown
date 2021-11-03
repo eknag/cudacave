@@ -11,8 +11,8 @@ From what I can remember, I encountered two primary issues.
 2. Numpy errors when calling tune.report
 3. Idle Processes lying around
 
-# 1 Radis Errors
-From what I could tell, I had followed the tutorial exactly. However, the script was crashing as soon as the dataset was loaded in with the following error.
+# 1. Radis Errors
+From what I could tell, I had followed the tutorial. However, the script crashed as soon as the dataset loaded in with the following error.
 
 {% highlight bash %}
 2021-11-02 21:01:38,924 WARNING experiment.py:302 -- No name detected on trainable. Using DEFAULT.
@@ -60,7 +60,7 @@ Traceback (most recent call last):
 redis.exceptions.ConnectionError: Error 32 while writing to socket. Broken pipe.
 {% endhighlight %}
 
-Since I have absolutely zero experience with radis, and honestly I'm not sure what a socket or a pipe are, I was a little bewildered. I felt like I had followed the tutorial exactly, but it just didn't work at all. Thankfully, I quickly ran into [This Glorious Thread](https://github.com/ray-project/ray/issues/12157) which pointed to the [User Guide on Handling Large Datasets](https://docs.ray.io/en/latest/tune/user-guide.html#handling-large-datasets). It seemed odd, since CIFAR10 is hardly a large dataset. However, it worked flawlessly. I'm still a bit confused why. All I had to do was change
+I WAS A LITTLE BEWILDERED since I have zero experience with radis, and honestly, I'm not sure what a socket or a pipe are. I felt like I had followed the tutorial, but it just didn't work at all. Thankfully, I quickly ran into [This Glorious Thread](https://github.com/ray-project/ray/issues/12157) which pointed to the [User Guide on Handling Large Datasets](https://docs.ray.io/en/latest/tune/user-guide.html#handling-large-datasets). It seemed odd since CIFAR10 is hardly a large dataset. However, it worked flawlessly. I'm still a bit confused why. All I had to do was change the following.
 
 {% highlight python %}
 results = tune.run(
@@ -88,10 +88,10 @@ results = tune.run(
     name=experiment_name)
 {% endhighlight %}
 
-# 2 Numpy Issues
+# 2. Numpy Issues
 The most time consuming issue that I encountered while setting up Ray Tune was a strange Numpy issue. It appeared that the values being bassed to tune.report during my trianing loop were incompatible with numpy. After a while of searching, made some changes until I finally added ".item()" to the metrics that I was passing into tune.report. This appeared to fix the issue. However, I was completely unable to reproduce the issue while writing this article. I guess I'll never know what was really going wrong.
 
-# Idle processes persisting
+# 3. Idle processes persisting
 There were several times where Ray Tune crashed. When Ray Tune doesn't end properly, it tends to leave a ton of idle processes lying around. To address these quickly, the following command was rather useful
 
 {% highlight bash %}

@@ -12,6 +12,7 @@ I'm hosting everything using NGINX.
 * Setting up NGINX via [Nginx for beggineers](https://medium.com/swlh/create-your-own-linux-server-with-nginx-for-beginners-with-ip-public-40c6c004b0b4) and [Better DigitalOcean Article](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04).
 * Jekyll Setup via [Jeckyll setup article](https://jekyllrb.com/docs/installation/ubuntu/) and then swtiched to [digital ocean one](https://www.digitalocean.com/community/tutorials/how-to-get-started-with-jekyll-on-an-ubuntu-vps)
 * Jekyll-spaceship plugin added via [Jekyll-spaceship setup instructions](https://github.com/jeffreytse/jekyll-spaceship). This provides mathjax support.
+* Jekyll-sitemap installed based on the advise of [This article](https://blog.webjeda.com/jekyll-sitemap/).
 
 ## Important Commands
 `edit_cudacave` and `deploy_cudacave` are scripts located in \bin that should be used to make changes to the website.
