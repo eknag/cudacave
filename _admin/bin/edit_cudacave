@@ -14,4 +14,15 @@ openDoc() {
   vim $full_file_name
 }
 
-openDoc $1
+#Check if there is a user input, if not, request some
+if [ -z "$1" ]
+then 
+	read -p 'Enter Blog Post Name: ' fname
+else
+	fname=$1
+fi
+
+#replace spaces with "-"
+formatted_name=${fname// /-}
+
+openDoc $formatted_name
