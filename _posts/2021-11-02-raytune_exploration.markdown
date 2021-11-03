@@ -247,7 +247,9 @@ if (epoch % 4 == 0 and params['ray_tune']):
 
 Experiment results can be visualized easily using `tensorboard --logdir ./tune_results/pool_test`.
 
-Some examples include - PUT SOME IMAGES HERE
+Here is an example of a learning rate test that was run.
+
+![Learning Rate Results TensorBoard Plot](/assets/images/tensorboard_lr_test.png)
 
 # Limitations
 
