@@ -31,3 +31,4 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 #jekyll-spaceship for mathjax support https://github.com/jeffreytse/jekyll-spaceship
 
 gem 'jekyll-spaceship'
+gem 'jekyll-sitemap'
