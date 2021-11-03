@@ -3,7 +3,7 @@
 #If an argument is provided, it opens a new markdown file in the _posts directory of the blog
 
 blogDirectory="$HOME/jekyll/cudacave.com"
-starterPost="$HOME/jekyll/cudacave.com/starter_files/starter_post.md"
+starterPost="$HOME/jekyll/cudacave.com/_admin/starter_files/starter_post.md"
 
 openDoc() {
   fname=$1
